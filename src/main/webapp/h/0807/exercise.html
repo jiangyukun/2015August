@@ -1,0 +1,280 @@
+<html>
+<head>
+    <title>Personal Center</title>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+    <style>
+        .redfont {
+            color: #ff5b5b;
+            font-size: 20px;
+        }
+
+        .rg-head_pad {
+            padding: 7px 0 10px 25px;
+        }
+
+        .rg-head_pad ul {
+            float: left;
+            padding-right: 30px;
+            border-right: 1px dashed #d2d2d2;
+            height: 111px;
+            font-size: 14px;
+            line-height: 14px;
+        }
+
+        .rg-head_pad li {
+            padding-top: 16px;
+        }
+
+        .rg-head_pad ul.first {
+            padding-right: 30px;
+        }
+
+        .rg-head_pad ul.second {
+            padding-right: 40px;
+            padding-left: 47px;
+        }
+
+        .rg-head_pad span {
+            color: #4b4a48;
+            font-size: 20px;
+        }
+
+        .btn-red {
+            color: #fff;
+            background: #dd3d47;
+            border-radius: 10px;
+            width: 116px;
+            height: 33px;
+            line-height: 33px;
+            text-align: center;
+            display: inline-block;
+            margin-left: 37px;
+            margin-top: 14px;
+        }
+
+        .active {
+            background: #aaa;
+            border-bottom: 1px solid #fff;
+        }
+
+        .right_main {
+            width: 1000px;
+        }
+
+        .rg_head,
+        .rg_mid {
+            border: 1px solid #e5e5e5;
+            background: #fff;
+            margin-bottom: 21px;
+        }
+
+        .disline {
+            display: inline-block;
+            margin: 25px 0 35px 19px;
+            padding-left: 88px;
+            height: 68px;
+            background: url(../img/PersCent_icon.png) no-repeat;
+            color: #4b4a48;
+        }
+
+        .disline h2 {
+            padding-top: 13px;
+            font-size: 20px;
+            font-weight: normal;
+            line-height: 20px;
+            height: 20px;
+        }
+
+        .disline p {
+            line-height: 35px;
+            height: 35px;
+            font-size: 14px;
+        }
+
+        .rg_mid table {
+            border: 1px solid #e5e5e5;
+            border-top: 0;
+            color: #484b4d;
+            width: 944px;
+            border-spacing: 0;
+            text-align: center;
+        }
+
+        .rg_mid th {
+            background: #e5e5e5;
+            border-left: 1px solid #fff;
+            line-height: 39px;
+            height: 39px;
+        }
+
+        .rg_mid th:first-child {
+            border: 0;
+        }
+
+        .rg_mid td {
+            height: 48px;
+            line-height: 48px;
+            border-top: 1px solid #e5e5e5;
+        }
+
+        .rg_mid tr.frist td {
+            border-top: 0;
+        }
+
+        ul.tab_head {
+            display: block;
+            margin: 0;
+            margin-bottom: 28px;
+            position: relative;
+            background: #fbfbfb;
+            border-bottom: 1px solid #e5e5e5;
+            padding: 0;
+        }
+
+        ul.tab_head li {
+            width: 138px;
+            height: 44px;
+            line-height: 44px;
+            float: left;
+            border: 0;
+            border-right: 1px solid #e5e5e5;
+            text-align: center;
+        }
+
+        ul.tab_head li a {
+            text-decoration: none;
+            font-size: 14px;
+            color: #4b4a48;
+            width: 138px;
+            height: 44px;
+            line-height: 44px;
+            display: inline-block;
+        }
+
+        .clearboth {
+            width: 0;
+            height: 0;
+            clear: both;
+        }
+
+        .tab_main {
+            min-height: 303px;
+        }
+
+        ul.tab_head li:hover {
+            background: #fff;
+        }
+    </style>
+</head>
+<body>
+<div class="wd">
+    <div class="right_main">
+        <div class="rg_head">
+            <div class="rg-head_pad">
+                <ul class="first">
+                    <li>昨日收益（元）</li>
+                    <li class="redfont">暂无收益</li>
+                    <li>历史累计收益：<span>0.00</span>元</li>
+                </ul>
+                <ul class="second">
+                    <li>近七日年化收益率：<span>20</span>%</li>
+                    <li>持有金额：<span>0.00</span>元</li>
+                    <li>用户体验金额：<span>0.00</span>元</li>
+                </ul>
+                <div>
+                    <a class="btn-red">开始抢购</a><br/>
+                    <a class="btn-red">赎回</a>
+                </div>
+                <div class="clearboth"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="rg_mid" id="tabs">
+        <ul class="tab_head">
+            <li id="tab_0"><a onclick="ChangeDiv('0','tabs_',2)">全部</a></li>
+            <li id="tab_1"><a onclick="ChangeDiv('1','tabs_',2)">未支付</a></li>
+            <li id="tab_2"><a onclick="ChangeDiv('2','tabs_',2)">还款中</a></li>
+            <div class="clearboth"></div>
+        </ul>
+        <div class="tab_main">
+            <div id="tabs_0" style="display:block;">
+                <table>
+                    <thead>
+                    <tr>
+                        <th class="brf">名称</th>
+                        <th>当前收益率</th>
+                        <th>特权收益率</th>
+                        <th>计息日期</th>
+                        <th>投资金额</th>
+                        <th>状态</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr class="frist">
+                        <td>定存理财 A150803</td>
+                        <td>8.00%</td>
+                        <td>0.5%</td>
+                        <td>2015.8.5</td>
+                        <td>￥2,072</td>
+                        <td>未支付</td>
+                        <td>
+                            <select>
+                                <option>自动续投</option>
+                                <option>到期赎回</option>
+                                <option>立即赎回</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>定存理财 A150803</td>
+                        <td>8.00%</td>
+                        <td>0.5%</td>
+                        <td>2015.8.5</td>
+                        <td>￥2,072</td>
+                        <td>未支付</td>
+                        <td>
+                            <select>
+                                <option>自动续投</option>
+                                <option>到期赎回</option>
+                                <option>立即赎回</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>定存理财 A150803</td>
+                        <td>8.00%</td>
+                        <td>0.5%</td>
+                        <td>2015.8.5</td>
+                        <td>￥2,072</td>
+                        <td>未支付</td>
+                        <td>
+                            <select>
+                                <option>自动续投</option>
+                                <option>到期赎回</option>
+                                <option>立即赎回</option>
+                            </select>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="tabs_1" style="display:none;">2</div>
+            <div id="tabs_2" style="display:none;">3</div>
+        </div>
+    </div>
+</div>
+<script>
+    function ChangeDiv(divId, divName, zDivCount) {
+        for (i = 0; i <= zDivCount; i++) {
+            document.getElementById(divName + i).style.display = "none";
+            document.getElementById('tab_' + i).className = '';
+        }
+        document.getElementById(divName + divId).style.display = "block";
+        document.getElementById('tab_' + divId).className = 'active';
+
+    }
+</script>
+</body>
+</html>

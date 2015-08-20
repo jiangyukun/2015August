@@ -39,10 +39,8 @@ public class NioServer {
             if (nKeys > 0) {
                 for (SelectionKey selectionKey : selector.selectedKeys()) {
                     if (selectionKey.isAcceptable()) {
-                        ServerSocketChannel tempServerChannel = (ServerSocketChannel) selectionKey
-                                .channel();
-                        SocketChannel socketChannel = tempServerChannel
-                                .accept();
+                        ServerSocketChannel tempServerChannel = (ServerSocketChannel) selectionKey.channel();
+                        SocketChannel socketChannel = tempServerChannel.accept();
                         if (socketChannel == null) {
                             continue;
                         }
@@ -52,8 +50,7 @@ public class NioServer {
                     } else if (selectionKey.isReadable()) {
                         // try { Thread.sleep(5000); } catch
                         // (InterruptedException e) { e.printStackTrace(); }
-                        SocketChannel socketChannel = (SocketChannel) selectionKey
-                                .channel();
+                        SocketChannel socketChannel = (SocketChannel) selectionKey.channel();
 
                         StringBuilder sb = new StringBuilder();
                         ByteBuffer byteBuffer = ByteBuffer.allocate(1024);

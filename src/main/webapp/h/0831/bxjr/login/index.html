@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="renderer" content="webkit">
+    <title>欢迎登录 - 宝象金融</title>
+    <link rel="shortcut icon" href="../images/indexnew/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/normalize.css?v=20150828"/>
+    <link rel="stylesheet" href="../css/common.css?v=20150828"/>
+    <script type="text/javascript" src="../js/indexnew/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../js/indexnew/jquery.slides.min.js"></script>
+    <script type="text/javascript" src="../js/indexnew/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="../js/seajs/dist/sea.js"></script>
+    <script type="text/javascript" src="../js/seajs-css/dist/seajs-css.js"></script>
+    <script type="text/javascript" src="../js/indexnew/jq.Slide.js"></script>
+    <script type="text/javascript" src="../js/indexnew/common.js"></script>
+    <script type="text/javascript" src="../js/indexnew/modernizr-2.6.2.min.js"></script>
+    <script type="text/javascript" src="../js/img-animal.js"></script>
+    <script type="text/javascript">window.hxb = {ctx: "/"};</script>
+    <style>.placeholder {
+        color: #a9a9a9;
+    }</style>
+    <!--[if lt IE 10]>
+    <script type="text/javascript" src="../js/jquery.placeholder.min.js"></script>
+    <![endif]-->
+
+    <script src="../js/jquery.cookie.js"></script>
+    <script>
+        function parseQueryString(url) {
+            var obj = {};
+            var start = url.indexOf("?") + 1;
+            var str = url.substr(start);
+            var arr = str.split("&");
+            for (var i = 0; i < arr.length; i++) {
+                var arr2 = arr[i].split("=");
+                obj[arr2[0]] = arr2[1];
+            }
+            return obj;
+        }
+        var obj = parseQueryString(window.location.search);
+        if (obj.hmsr != undefined || obj.hmmd != undefined || obj.hmpl != undefined || obj.hmkw != undefined || obj.hmci != undefined) {
+            var cookietime = new Date();
+            cookietime.setTime(cookietime.getTime() + (60 * 60 * 1000 * 24));
+            $.cookie("hmsr", obj.hmsr ? obj.hmsr : "0", {expires: cookietime, path: '/'});
+            $.cookie("hmmd", obj.hmmd ? obj.hmmd : "0", {expires: cookietime, path: '/'});
+            $.cookie("hmpl", obj.hmpl ? obj.hmpl : "0", {expires: cookietime, path: '/'});
+            $.cookie("hmkw", obj.hmkw ? obj.hmkw : "0", {expires: cookietime, path: '/'});
+            $.cookie("hmci", obj.hmci ? obj.hmci : "0", {expires: cookietime, path: '/'});
+        }
+    </script>
+    <script type="text/javascript">
+        seajs.config({
+            base: "../js",
+            alias: {
+                handlebars: 'handlebars-v1.3.0.js',
+                validationEngine: 'validation/js/jquery.validationEngine',
+                layer: 'layer1.9/layer',
+                inputFormat: 'jquery.inputFormat',
+                fancybox: 'fancybox/jquery.fancybox-1.3.2',
+                main: 'application',
+                copy: 'copy/jquery.zclip.min'
+            },
+            map: [
+                [/^(.*\.(?:css|js))(.*)$/i, '$1?v=20150828']
+            ]
+        });
+        seajs.use("main");
+    </script>
+    <style type="text/css">
+        .head_menu {
+            display: none;
+        }
+    </style>
+
+    <meta name="layout" content="regMain"/>
+
+    <style type="text/css">
+        body {
+            background-color:;
+        }
+    </style>
+</head>
+<body>
+<div class="bx_wrap">
+
+    <div class="bx_head">
+        <div class="bx_top">
+            <div class="w1200">
+                <div class="bx_topbar_right">
+                    <div class="bx_topmenu">
+                        <ul class="clearfix">
+                            <script type="text/javascript">
+                                var params = {
+                                    isBalance: 'balance',
+                                    isRecommend: 'recommend',
+                                    isValidStatus: 'validStatus',
+                                    isVoucherCount: 'voucherCount'
+                                };
+                                var paramsStr = '?';
+                                for (var item in params) {
+                                    if (window[item]) {
+                                        paramsStr += params[item] + "=true&";
+                                    }
+                                }
+                                $.ajax({
+                                    url: "http://www.bxjr.com/secure/get-login-info.html" + paramsStr,
+                                    async: false,
+                                    cache: false,
+                                    success: function (data) {
+                                        window.loginInfo = data;
+                                        var newAction = new Date().getTime();
+                                        if (data && data.isLogin) {
+                                            document.write('<li><span>你好，<a href="http://www.bxjr.com/center/home/index" class="bx_userName">' + data.callName + '</a></span></li>\
+                            <li class="bx_login_after bx_showMenu">\
+                                <a href="#" class="bx_msg"><i id="jrMsg">0</i></a>\
+                                <input type="hidden" id="jrMsgCount" value="0" />\
+                                <div class="bx_msgList">\
+                                	<s></s>\
+                                    <a href="http://www.bxjr.com/center/message/index?' + newAction + '" style="border-top:0;">理财<span id="wdMsg"></span></a>\
+                                    <a href="http://www.bxjr.com/zc/center/message/index.html?' + newAction + '">商品众筹<span id="ycMsg"></span></a>\
+                                    <a href="http://www.bxjr.com/gq/center/message/index.html?' + newAction + '">股权众筹<span id="ztMsg"></span></a>\
+                                </div>\
+                            </li>\
+                            <li class="bx_exit"><a href="http://www.bxjr.com/logout/logout.html">[退出]</a></li>');
+
+
+                                            // 理财端的消息数
+                                            var nCount = data && data.nCount ? data.nCount : 0;
+                                            $("#wdMsg").text(nCount);
+                                            $("#wdMsg").addClass('msgCount' + nCount);
+                                            $("#jrMsgCount").val(Number($("#jrMsgCount").val()) + Number(nCount));
+                                            changeJrMsg();
+                                            // 众筹端的消息数
+                                            $.getJSON("http://www.bxjr.com/zc/secure/get-login-info.html", function (json) {
+                                                var nCount = json && json.nCount ? json.nCount : 0;
+                                                $("#ycMsg").text(nCount);
+                                                $("#ycMsg").addClass('msgCount' + nCount);
+                                                $("#jrMsgCount").val(Number($("#jrMsgCount").val()) + Number(nCount));
+                                                changeJrMsg();
+                                            });
+                                            // 股权端的消息数
+                                            $.getJSON("http://www.bxjr.com/gq/secure/get-login-info.html", function (json) {
+                                                var nCount = json && json.nCount ? json.nCount : 0;
+                                                $("#ztMsg").text(nCount);
+                                                $("#ztMsg").addClass('msgCount' + nCount);
+                                                $("#jrMsgCount").val(Number($("#jrMsgCount").val()) + Number(nCount));
+                                                changeJrMsg();
+                                            });
+                                        } else {
+                                            $.get("/logout/ssoLogout.html");
+                                            $.get("/zc/logout/ssoLogout.html");
+                                            $.get("/gq/logout/ssoLogout.html");
+                                            document.write('<li class="bx_welcome"><span>欢迎来到宝象金融</span></li><li><a href="http://www.bxjr.com/login/index.html">登录</a></li><li><a href="http://www.bxjr.com/secure/register.html">免费注册</a></li>');
+                                        }
+                                    }
+                                });
+
+                                // 更新超过3位的数字
+                                function changeJrMsg() {
+                                    if ($("#jrMsgCount").val().length > 2) {
+                                        $("#jrMsg").html("...");
+                                        $("#jrMsg").addClass("bx_msg1")
+                                    } else {
+                                        $("#jrMsg").text($("#jrMsgCount").val());
+                                    }
+                                }
+                            </script>
+                            <li class="bx_app-jr bx_showMenu">
+                                <b></b>
+                                <a href="javascript:;">手机金融</a>
+                                <i></i>
+
+                                <div class="bx_downApp">
+                                    <img src="/images/indexnew/top-card.png" width="120" height="120"/>
+                                </div>
+                            </li>
+                            <li><a href="http://www.bxjr.com/asks/">宝象问答</a></li>
+                            <li><a href="http://bbs.bxjr.com/">宝象社区</a></li>
+                        </ul>
+                    </div>
+                    <div class="bx_toplink">
+                        <ul>
+                            <li class="bx_showMenu">
+                                <i class="bx_wx_icon"></i>
+
+                                <div class="bx_toplink_select">
+                                    <s></s>
+                                    <img src="/images/topbar_wx.png" width="94" height="94"/>
+
+                                    <p>关注宝象金融</p>
+                                </div>
+                            </li>
+                            <li class="bx_showMenu">
+                                <i class="bx_sina_icon"></i>
+
+                                <div class="bx_toplink_select">
+                                    <s></s>
+                                    <a rel="nofollow" href="http://weibo.com/bxjr" class="bx_round3">+ 宝象金融</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script type="text/javascript">
+            (function () {
+                if (location.pathname == "/") {
+                    $("#friends_link").show();
+                }
+            })();
+
+
+        </script>
+        <div class="bx_nav clearfix w1200">
+
+            <a href="http://www.bxjr.com" class="bx_logo bx_fl"><img src="/images/logo.png?v=20150806" title="logo"
+                                                                     width="165" height="43"/></a>
+
+            <div class="bx_menu bx_fl">
+                <ul>
+                    <li><a href="http://www.bxjr.com/">首页</a></li>
+                    <li><a href="http://www.bxjr.com/lc">理财</a></li>
+                    <li><a href="http://www.bxjr.com/pj">票据</a></li>
+                    <li class="bx_showMenu">
+                        <a href="http://www.bxjr.com/zc/">众筹</a>
+
+                        <div class="bx_menu_second">
+                            <a href="http://www.bxjr.com/zc/">商品众筹</a>
+                            <a href="http://www.bxjr.com/gq/">股权众筹</a>
+                        </div>
+                    </li>
+
+                    <li><a href="http://www.bxjr.com/borrow/index.html">借款</a></li>
+                    <li><a href="http://www.bxjr.com/about/index.html">关于我们</a></li>
+                </ul>
+            </div>
+            <div class="bx_userMenu bx_showMenu on">
+                <a href="http://www.bxjr.com/center/home/index"><b></b>我的账户<i></i></a>
+                <ul>
+                    <li><span></span><a href="http://www.bxjr.com/center/financing/index">理财账户</a></li>
+                    <li><span></span><a href="http://www.bxjr.com/center/member-info/index">安全设置</a></li>
+                </ul>
+            </div>
+        </div>
+
+
+    </div>
+    <!-- //head -->
+
+    <div class="bx_main">
+
+        <div class="bx_loginMain"
+             style="background: url(&#39;http://img01.bxjr.cc/upload/image/5f014fb8-8cdf-42c0-a411-5eb5c83e5130.png&#39;) no-repeat center">
+            <div class="w1200 bx_loginInfo">
+                <form action="http://www.bxjr.com/login/auth.html" method="post" id="loginForm">
+                    <input type="hidden" name="ct" value="6"/>
+                    <input type="hidden" name="bt" value="0"/>
+
+                    <div class="bx_loginTab bx_round5">
+                        <h2>用户登录</h2>
+                        <table>
+                            <tbody>
+                            <tr>
+                                <td>
+                                    <div class="bx_inputBox">
+                                        <i><img src="/images/indexnew/bx_userImg.png"/></i>
+                                        <input type="username" id="username" name="username"
+                                               class="bx_round3 validate[required]" tabindex="1" value=""
+                                               placeholder="请输入用户名 / 认证手机号"/>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="bx_inputBox">
+                                        <i><img src="/images/indexnew/bx_pswImg.png"/></i>
+                                        <input type="password" id="password" name="password" autocomplete="off"
+                                               class="bx_round3 validate[required,minSize[6]]" tabindex="2" value=""
+                                               placeholder="请输入密码"/>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="rememberPsw">
+                                        <input type="checkbox" id="rememberPsw" tabindex="3"/>
+                                        <span>记住用户名</span>
+                                    </label>
+                                    <a href="http://www.bxjr.com/secure/retrieve-pwd.html" tabindex="4">找回密码</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="submit" class="bx_round3 bx_orange_btn" value="登 录" tabindex="5"/>
+                                </td>
+                            </tr>
+                            </tbody>
+                            <tfoot>
+                            <tr>
+                                <td>
+                                    没有帐号？<a href="http://www.bxjr.com/secure/register.html" tabindex="6">免费注册</a>
+                                </td>
+                            </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+
+        seajs.use(["main", "validationEngine", "layer"], function (main) {
+            main.init();
+            $("#loginForm").ajaxForm(function (status, form, data, options) {
+                if (status) {
+                    if ($("#rememberPsw:checked").size()) {
+                        addCookie('username', $("#username").val(), 24 * 30)
+                    }
+                    location.href = "http://www.bxjr.com/tip/index.html?redirect=http%3A%2F%2Fwww.bxjr.com%2F&second=0";
+                }
+            });
+
+            // 取得用户名值
+            $("#username").focus();
+            var username = cookie('username');
+            if (username) {
+                $("#username").val(username);
+                $("#rememberPsw").attr("checked", true);
+                $("#password").focus();
+            }
+        });
+
+        function addCookie(objName, objValue, objHours) {      //添加cookie
+
+            var str = objName + "=" + escape(objValue);
+
+            if (objHours > 0) {                               //为时不设定过期时间，浏览器关闭时cookie自动消失
+
+                var date = new Date();
+
+                var ms = objHours * 3600 * 1000;
+
+                date.setTime(date.getTime() + ms);
+
+                str += "; expires=" + date.toGMTString();
+
+            }
+            document.cookie = str;
+        }
+
+        function cookie(name) {
+
+            var cookieArray = document.cookie.split("; "); //得到分割的cookie名值对
+
+            var cookie = new Object();
+
+            for (var i = 0; i < cookieArray.length; i++) {
+
+                var arr = cookieArray[i].split("=");       //将名和值分开
+
+                if (arr[0] == name)return unescape(arr[1]); //如果是指定的cookie，则返回它的值
+
+            }
+
+            return "";
+
+        }
+    </script>
+
+    <div class="bx_foot">
+        <div class="w1200 clearfix">
+            <div class="bx_link bx_fl">
+                <dl class="bx_about">
+                    <dt>
+                        <i></i>
+                        <a rel="nofollow" href="http://www.bxjr.com/about/index.html">关于我们</a>
+                    </dt>
+                    <dd>
+                        <a rel="nofollow" href="http://www.bxjr.com/about/team.html">管理团队</a>
+                        <a rel="nofollow" href="http://www.bxjr.com/about/collaboration.html">合作伙伴</a>
+                        <a rel="nofollow" href="http://www.bxjr.com/about/expert.html">专家顾问</a>
+                        <a rel="nofollow" href="http://www.bxjr.com/about/contact.html">联系我们</a>
+                    </dd>
+                </dl>
+                <dl class="bx_help">
+                    <dt>
+                        <i></i>
+                        <a rel="nofollow" href="http://www.bxjr.com/help/index.html">帮助中心</a>
+                    </dt>
+                    <dd>
+                        <a rel="nofollow" href="http://www.bxjr.com/help/index.html">常见问题</a>
+                        <a rel="nofollow" href="http://www.bxjr.com/help/explain.html">名词解释</a>
+                        <a href="http://www.bxjr.com/asks/">宝象问答</a>
+                        <a href="http://www.bxjr.com/help/expenses.html">资费标准</a>
+                    </dd>
+                </dl>
+            </div>
+            <div class="bx_service bx_fl">
+                <h2>400 885 1100</h2>
+
+                <p>服务时间：9:00-18:00 ( 周一至周五 )</p>
+            </div>
+        </div>
+        <div class="bx_copyRight clearfix w1200">
+            <p class="bx_fl">Copyright&copy;2014-2015.宝象金融版权所有 <a rel="nofollow" href="http://www.miibeian.gov.cn/"
+                                                                  target="_blank">沪ICP备15015289号</a></p>
+            <ul class="bx_fr">
+                <li class="bx_foot_sina"><a class="f-sina" rel="nofollow" href="http://weibo.com/bxjr" target="_blank"
+                                            title="新浪微博"></a></li>
+                <li class="bx_foot_qq"><a class="f-qq" target="_blank"
+                                          href="http://www.bxjr.com/about/contact.html?pop=true" title="在线客服"></a></li>
+                <li class="bx_foot_wx"><a href="javascript:void(0)" class="f-wx" title="扫描二维码"><img
+                        src="/images/indexnew/card-wx.png"/></a></li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+</body>
+<!--
+
+-->
+</html>

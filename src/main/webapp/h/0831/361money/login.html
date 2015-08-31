@@ -1,0 +1,176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="css/login.css" type="text/css" rel="stylesheet"/>
+    <title>全金网登录</title>
+    <link href="js/validation/css/validationEngine.jquery.css" type="text/css" rel="stylesheet"/>
+    <script type="text/javascript">
+        window.qjw = {ctx: ""};
+    </script>
+    <style type="text/css>">
+        .zl_re {
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="head">
+        <div class="menu">
+            <div class="w1200 p-relative">
+                <a href="http://www.361money.com/" class="logo"></a>
+                <b class="welcome_pic"></b>
+            </div>
+        </div>
+    </div>
+    <div class="wrap_bg">
+        <div class="w1200 p-relative">
+            <div class="zl_index-loginForm">
+                <form id="loginForm" action="login.do" method="post" class="zl_form-horizontal">
+                    <fieldset>
+                        <table>
+                            <tbody>
+                            <tr>
+                                <td class="zl-head">
+                                    用户登录
+                                </td>
+                                <td align="right">
+                                    <a href="http://portal.361money.com/register" tabindex="5">免费注册</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <div class="zl_re">
+                                        <i class="zl_user_icon"></i>
+                                        <input input type="text" name="username" value="" id="username" placeholder="请输入用户名/认证手机号"
+                                               class="zl_round validate[required]" tabindex="1">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <div class="zl_re">
+                                        <i class="zl_psw_icon"></i>
+                                        <input type="password" name="password" id="password"
+                                               placeholder="请输入密码" class="zl_round validate[required,minSize[6]"
+                                               tabindex="2">
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="remember">
+                                        <input type="checkbox" id="remember" tabindex="3">
+                                        <span>记住用户名</span>
+                                    </label>
+                                </td>
+                                <td align="right">
+                                    <a href="http://portal.361money.com/secure/forget" tabindex="5">忘记密码？</a>
+                                </td>
+                            </tr>
+                            </tbody>
+                            <tfoot>
+                            <tr>
+                                <td colspan="2">
+                                    <input type="submit" value="立即登录" class="btn-submit" tabindex="6">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="center" colspan="2" id="msgError"></td>
+                            </tr>
+                            </tfoot>
+                        </table>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="w1200">
+            <div class="f_main clearfix">
+                <div class="f_tips">
+                    <dl>
+                        <dt>400 1000 361</dt>
+                        <dd>
+                            友情提示<br/>
+                            合理配资、稳健盈利、股市有风险，投资需谨慎！<br/>
+                            全金网全心为您 祝您日进斗金。
+                        </dd>
+                    </dl>
+                </div>
+                <div class="f_about">
+                    <dl>
+                        <dt>www.361money.com</dt>
+                        <dd class="clearfix">
+                            <a href="/about">关于我们</a>
+                            <a href="/about/contact">联系我们</a>
+                            <a href="/about/join">加入全金网</a>
+                            <a href="/join/index">合作加盟</a>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="f_service">
+                    <img src="/img/foot_img.jpg" class="fr"/>
+
+                    <p class="fr">关注微信账号<br/>
+                        获取更多行业咨询</p>
+
+                </div>
+            </div>
+        </div>
+        <div class="copyRight w1200">
+            <p>Copyright&copy;2014-2015.上海金丘金融信息服务有限公司版权所有 沪ICP备15026185</p>
+            <a href='https://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&entyId=dov73ne26zbqq0ilakzqm4tsszbp5c7bpu'
+               target="_blank"><img src="/img/f_img03.png" border=0></a>
+            <a id="___szfw_logo___" href="https://search.szfw.org/cert/l/CX20150623010856010602" target="_blank"><img
+                    src="/img/f_img01.png"/></a>
+            <a href="http://webscan.360.cn/index/checkwebsite/url/361money.com" target="_blank"><img
+                    src="/img/f_img02.png"/></a>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="js/validation/js/jquery.validationEngine.js"></script>
+<script type="text/javascript" src="js/validation/js/jquery.validationEngine-zh_CN.js"></script>
+<script type="text/javascript">
+    $(".zl_index-loginForm").animate(
+            {
+                'top': '100px',
+                'opacity': 1
+            }, {
+                duration: '5000',
+                easing: 'easeInOutCirc',
+                complete: function () {
+                    $(this).animate({
+                        'top': '40px'
+                    }, {
+                        duration: '3000',
+                        easing: 'easeOutBounce'
+                    })
+                }
+            }
+    );
+    jQuery(document).ready(function () {
+        function success() {
+
+        }
+        // binds form submission and fields to the validation engine
+        $('#loginForm').validationEngine({
+            promptPosition: "centerRight:3,1",
+            addPromptClass: 'formError-white',
+            ajaxFormValidation: true,
+            maxErrorsPerField: 1,
+            onAjaxFormComplete: success,
+            //只在提交的时候检查为空的输入项（不是框架原有的属性）
+            onlySubmitValidRequired: true,
+            ajaxFormValidationMethod: $(this).attr("method") || 'get',
+            scroll: false
+        });
+    });
+</script>
+
+
+</body>
+</html>

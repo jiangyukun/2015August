@@ -2,11 +2,19 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/log4j2.xml" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/h/0807/exercise(1).html" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/h/0807/exercise.html" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/h/0820/我的小白理财 - 京东金融.htm" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/h/0820/我的小白理财 - 京东金融_files" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/h/0825/tableTree" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/h/0831/361money/css" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/h/0831/361money/img" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/h/0831/361money/js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/h/0831/361money/login.html" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/h/0831/bxjr/css" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/h/0831/bxjr/js" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/webapp/h/0831/bxjr/login" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/res/css" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/res/fonts" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/main/webapp/res/js" charset="GBK" />

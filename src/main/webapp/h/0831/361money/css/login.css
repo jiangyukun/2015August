@@ -1,0 +1,647 @@
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/* A better looking default horizontal rule */
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between images, videos, audio and canvas and the bottom of
+ * their containers: h5bp.com/i/440
+ */
+
+audio,
+canvas,
+img,
+video {
+    vertical-align: middle;
+}
+
+/* Remove default fieldset styles.*/
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/* Allow only vertical resizing of textareas.*/
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Browse Happy prompt
+   ========================================================================== */
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+/*
+ * 底部沉底
+ */
+html, body {
+    height: 100%;
+}
+
+.wrap {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%; /*IE6不识别min-height*/
+    position: relative;
+}
+
+.main {
+    padding-bottom: 300px;
+}
+
+.foot {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    clear: both;
+}
+
+.footer {
+    background: #333;
+    min-width: 1200px;
+    height: 260px;
+    padding: 20px 0;
+    font-size: 14px;
+}
+
+/*
+ * 居中容器
+ */
+.w980 {
+    margin-left: auto;
+    margin-right: auto;
+    width: 980px;
+}
+
+.w1000 {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px;
+}
+
+.w1100 {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1100px;
+}
+
+.w1200 {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1200px;
+}
+
+/* css reset */
+
+/* 清除内外边距 */
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
+dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+pre, /* text formatting elements 文本格式元素 */
+fieldset, legend, button, input, textarea, /* form elements 表单元素 */
+th, td {
+    /* table elements 表格元素 */
+    margin: 0;
+    padding: 0;
+}
+
+/* 设置默认字体 */
+body,
+button, input, select, textarea {
+    font: 12px/1 \5FAE\8F6F\96C5\9ED1, 黑体;
+    outline: none;
+}
+
+address, cite, em, var {
+    font-style: normal;
+}
+
+/* 将斜体扶正 */
+h1 {
+    font-size: 18px; /* 18px / 12px = 1.5 */
+}
+
+h2 {
+    font-size: 16px;
+}
+
+h3 {
+    font-size: 14px;
+}
+
+h4, h5, h6 {
+    font-size: 100%;
+}
+
+/* 重置列表元素 */
+ul, ol {
+    list-style: none;
+}
+
+/* 重置文本格式元素 */
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+/* 单属性 */
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.re {
+    position: relative;
+}
+
+.round3 {
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.round5 {
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.c_red {
+    color: #cc2929;
+}
+
+.c_red2 {
+    color: #801a1a;
+}
+
+.c_gray {
+    color: #babec1;
+}
+
+.c_green {
+    color: #53b324;
+}
+
+.c_yellow {
+    color: #e0a85a;
+}
+
+.c_blue {
+    color: #2a81ae;
+}
+
+.btn_red {
+    display: block;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    color: #fff;
+    font-size: 24px;
+    background: #cc2929;
+    border: 0;
+}
+
+.btn_red:hover {
+    background: #b50000;
+}
+
+.w100 {
+    width: 100%;
+}
+
+.mt20 {
+    margin-top: 20px;
+}
+
+.bor-bt {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.pd10 {
+    padding-bottom: 10px;
+}
+
+.module {
+    margin-top: 18px;
+    margin-bottom: 46px;
+}
+
+.bg_red {
+    background-color: #cc2929;
+}
+
+.bg_red:hover {
+    background-color: #b50000;
+}
+
+.bg_gray1 {
+    background-color: #cdcdcd;
+}
+
+.bg_gray1:hover {
+    background-color: #b8b8b8;
+}
+
+.bg_gray {
+    background-color: #fdfdfd;
+}
+
+.border_gray {
+    border: 1px solid #e5e5e5;
+}
+
+/* login ! */
+.w1200 {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1200px;
+}
+
+.p-relative {
+    position: relative;
+}
+
+.wrap_bg {
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 1200px;
+    height: 475px;
+    background: url("../img/banner_xl.jpg") no-repeat;
+}
+
+.zl_form-horizontal table {
+    border-spacing: 0px;
+}
+
+.zl_form-horizontal td {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.zl_form-horizontal td > a, .zl_form-horizontal span {
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.zl_index-loginForm {
+    width: 291px;
+    height: 395px;
+    z-index: 9;
+    border-radius: 10px;
+    position: absolute;
+    right: 50px;
+    top: -500px;
+    padding: 0 28px;
+    background: url("../img/zl_login_bg.png") repeat;
+    overflow: visible;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+.zl-head {
+    color: #fff;
+    font-size: 20px;
+    height: 63px;
+    line-height: 63px;
+}
+
+.btn-submit {
+    width: 291px;
+    height: 48px;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    color: #fff;
+    background: #cc2929;
+    font-size: 19px;
+    font-family: "微软雅黑";
+    border: none;
+}
+
+.zl_user_icon, .zl_psw_icon {
+    width: 50px;
+    height: 52px;
+    background: url("../img/zl_user_icon.png") 2px 2px no-repeat;
+    display: inline-block;
+    position: absolute;
+    outline: none;
+}
+
+.zl_psw_icon {
+    background: url("../img/zl_psw_icon.jpg") 2px 2px no-repeat;
+}
+
+.zl_round {
+    border: 0;
+    width: 221px;
+    padding: 15px 10px 15px 58px;
+    background: #fff;
+    height: 18px;
+    line-height: 18px;
+    margin: 2px;
+}
+
+.zl_round:hover, .zl_round:focus {
+    border: 2px solid #cc2929;
+    margin: 0;
+}
+
+input[type=checkbox] {
+    border: 2px solid #3a3a3a;
+}
+
+/* 头部 */
+.head {
+}
+
+.top_bar {
+    min-width: 1200px;
+    height: 28px;
+    background: #f9f9f9;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.welcome {
+    float: left;
+    width: 230px;
+    margin-left: 10px;
+    padding-left: 20px;
+    line-height: 28px;
+    background: url("../img/phone_icon.png") no-repeat 0 center;
+}
+
+.user_bar {
+    float: right;
+    height: 16px;
+    line-height: 16px;
+    padding: 6px 0;
+}
+
+.user_bar li {
+    float: left;
+    padding: 0 26px;
+    border-left: 1px solid #b8bcbf;
+}
+
+.user_bar li:first-child {
+    border-left: 0;
+}
+
+.user_bar li a {
+    color: #7a7d80;
+}
+
+.user_bar li a:hover {
+    color: #ca3030;
+}
+
+.user_bar .login_after {
+    padding: 0 14px;
+}
+
+.user_bar .login_after span {
+    color: #7a7d80;
+    padding-right: 12px;
+}
+
+.user_bar .userName {
+    padding: 0 14px;
+}
+
+.user_bar .userName a {
+    padding-left: 28px;
+    background: url("../img/phone_user.png") no-repeat 0 center;
+}
+
+.user_bar .download {
+    padding: 0 0 0 14px;
+}
+
+.user_bar .download a {
+    padding-left: 28px;
+    background: url("../img/system_icon.png") no-repeat 0 center;
+}
+
+.menu {
+    min-width: 1200px;
+    height: 70px;
+}
+
+.menu .logo {
+    float: left;
+    width: 304px;
+    height: 70px;
+    background: url("../img/logo.png") no-repeat 0 0;
+}
+
+.menu .nav {
+    float: right;
+    padding: 20px 0 14px;
+    height: 36px;
+    line-height: 36px;
+    font-size: 16px;
+}
+
+.menu .nav li {
+    float: left;
+    display: inline;
+    margin-left: 18px;
+    overflow: hidden;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.menu .nav li a {
+    padding: 0 24px;
+    color: #494b4c;
+    display: block;
+}
+
+.menu .nav .on a, .menu .nav a:hover {
+    color: #fff;
+    background: #ca3030;
+}
+
+.welcome_pic {
+    display: block;
+    width: 110px;
+    height: 40px;
+    position: absolute;
+    left: 320px;
+    top: 19px;
+    background: url("../img/l-icon.png") no-repeat;
+}
+
+/* 底部  */
+.foot {
+    min-width: 1200px;
+    height: 260px;
+    padding: 20px 0;
+    background: #333333;
+    font-size: 14px;
+}
+
+.f_main {
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.f_main > div {
+    height: 134px;
+    padding-top: 20px;
+    border-left: 1px solid #4c4c4c;
+    float: left;
+}
+
+.f_main > div:first-child {
+    border-left: 0;
+}
+
+.f_main .f_tips {
+    padding-left: 14px;
+    width: 382px;
+}
+
+.f_main .f_tips dt {
+    height: 32px;
+    margin-bottom: 20px;
+    font-size: 32px;
+}
+
+.f_main .f_tips dd {
+    line-height: 1.5;
+}
+
+.f_main .f_about {
+    width: 340px;
+    padding: 12px 30px 0;
+}
+
+.f_main .f_about dt {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    line-height: 20px;
+}
+
+.f_main .f_about a {
+    float: left;
+    min-width: 56px;
+    display: inline;
+    margin-left: 32px;
+    color: #fff;
+}
+
+.f_main .f_about a:first-child {
+    margin-left: 0;
+}
+
+.f_main .f_about a:hover {
+    text-decoration: underline;
+}
+
+.f_main .f_about dt span {
+    float: left;
+}
+
+.f_main .f_about .wx_icon {
+    width: 40px;
+    height: 40px;
+    float: left;
+    z-index: 9;
+    overflow: hidden;
+    position: relative;
+    background: url(../images/wx_icon.png) no-repeat 0 0;
+}
+
+.f_main .f_about .wx_icon img {
+    position: absolute;
+    left: -100px;
+    top: -200px;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+.f_main .f_service {
+    width: 400px;
+    text-align: right;
+    padding-top: 11px;
+}
+
+.f_main .f_service p {
+    padding: 40px 6px 0 0;
+    line-height: 24px;
+}
+
+.copyRight {
+    color: #fff;
+    text-align: center;
+}
+
+.copyRight p {
+    height: 38px;
+    line-height: 38px;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.clearfix {
+    *zoom: 1;
+}
